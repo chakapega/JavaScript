@@ -1,5 +1,5 @@
 let quantityChildren;
-const inputContainer = document.querySelector('.inputs__container');
+const inputsContainer = document.querySelector('.inputs__container');
 const personHavingChildren = document.querySelector('#input__person_having_children');
 let buttonNext;
 const buttonShowResults = document.querySelector('.button__show_results');
@@ -10,7 +10,7 @@ const createQuantityChildrenInput = () => {
   const personQuantityChildrenContainer = document.createElement('div');
   const laberForQuantityChildrenInput = document.createElement('label');
   const inputQuantityChildren = document.createElement('input');
-  const buttonNext = document.createElement('button');
+  buttonNext = document.createElement('button');
 
   personQuantityChildrenContainer.classList.add('container__person_quantity_children', 'margin-bottom');
 
@@ -36,7 +36,7 @@ const createQuantityChildrenInput = () => {
 const showQuantityChildrenInput = () => {
 
   if (personHavingChildren.checked) {
-    inputContainer.insertBefore(createQuantityChildrenInput(), buttonShowResults);
+    inputsContainer.insertBefore(createQuantityChildrenInput(), buttonShowResults);
     buttonNext = document.querySelector('.button__next')
     buttonNextFunc();
   } else {
@@ -58,8 +58,7 @@ const correctionQuantityInputsForChildren = () => {
 
 const getPersonQuantityChildren = () => {
 
-  let inputPersonQuantityChildren = document.querySelector('#input__person_quantity_children').value;
-  return inputPersonQuantityChildren;
+  quantityChildren = document.querySelector('#input__person_quantity_children').value;
   
 };
 
@@ -105,7 +104,7 @@ const createInputsForChildren = quantityChildren => {
     childrenInputsContainer.appendChild(labelAge);
     childrenInputsContainer.appendChild(inputAge);
     
-    inputContainer.insertBefore(childrenInputsContainer, buttonShowResults);
+    inputsContainer.insertBefore(childrenInputsContainer, buttonShowResults);
   };
 
 };
@@ -140,21 +139,12 @@ const showResults = () => {
       resultsContainer.innerHTML += '<p class="person-info">Having children: No</p>';
     };
 
-    inputContainer.style.display = 'none';
+    inputsContainer.style.display = 'none';
     mainContainer.appendChild(resultsContainer);
 
   } else {
     alert('Input error!');
   };
-  
-};
-
-const buttonNextFunc = () => {
-
-  buttonNext.addEventListener('click', function() {
-    quantityChildren = getPersonQuantityChildren();
-    createInputsForChildren(quantityChildren);
-  });
   
 };
 
@@ -170,6 +160,15 @@ const findEmptyInputs = () => {
   };
   
   return emptyInputs;
+  
+};
+
+const buttonNextFunc = () => {
+
+  buttonNext.addEventListener('click', function() {
+    getPersonQuantityChildren();
+    createInputsForChildren(quantityChildren);
+  });
   
 };
 
