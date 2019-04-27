@@ -1,0 +1,11 @@
+.choice-city-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 80px;
+  justify-content: space-around
+}
+.choice-city-form__button {
+  width: 80px;
+  height: 25px;
+}
