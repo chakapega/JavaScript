@@ -10,11 +10,25 @@
 </head>
 <body>
   <main>
-    <form class="choice-city-form" action="">
-      <label for="choice-city-form__input">Enter the name of the city</label>
-      <input type="text" name="" id="choice-city-form__input">
-      <button class="choice-city-form__button">Next</button>
-    </form>
+    <div class="choice-city-form__container">
+      <form class="choice-city-form" action="">
+        <label for="choice-city-form__input">Enter the name of the city</label>
+        <input type="text" name="" id="choice-city-form__input">
+        <button class="choice-city-form__button">Show weather</button>
+      </form>
+    </div>
+    <div class="results__container">
+      <div class="condition">
+        <img src="" alt="" class="condition__img">
+        <span class="condition__text"></span>
+      </div>
+      <div class="weather-data">
+        <span class="weather-data__wind"></span>
+        <span class="weather-data__precipitation"></span>
+        <span class="weather-data__pressure"></span>
+        <span class="weather-data__temperature"></span>
+      </div>
+    </div>
   </main>
 </body>
 </html>
