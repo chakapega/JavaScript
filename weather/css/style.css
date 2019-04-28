@@ -48,6 +48,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   height: 62%;
+  /* delete */
 }
 
 #choice-city-form__input {
