@@ -43,14 +43,6 @@ body {
   border-radius: 5px;
 }
 
-.weather-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 62%;
-  /* delete */
-}
-
 #choice-city-form__input {
   width: 200px;
 }
