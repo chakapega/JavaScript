@@ -74,6 +74,16 @@ const createElemForResults = () => {
 
 };
 
+const deletionResultsContainer = () => {
+
+  try {
+    document.querySelector('.results__container').remove();
+  } catch {
+
+  }
+
+};
+
 choiceCityForm.addEventListener('submit', e => {
   
   e.preventDefault();
@@ -81,6 +91,7 @@ choiceCityForm.addEventListener('submit', e => {
   city = e.target['choice-city-form__input'].value;
   
   getWeather();
+  deletionResultsContainer();
   showResults();
   
 });
