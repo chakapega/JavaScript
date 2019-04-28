@@ -16,6 +16,10 @@ const getWeather = () => {
 };
 
 const showResults = () => {
+
+  const location = document.querySelector('.location');
+  location.textContent = allDataWeather.location.country + ' / ' + allDataWeather.location.name;
+
   const conditionImg = document.querySelector('.condition__img');
   conditionImg.src = 'http:' + allDataWeather.current.condition.icon;
 
@@ -33,6 +37,7 @@ const showResults = () => {
 
   const weatherDataTemperature = document.querySelector('.weather-data__temperature');
   weatherDataTemperature.textContent = 'Temperature: ' + allDataWeather.current.temp_c + ' °c';
+
 };
 
 choiceCityForm.addEventListener('submit', e => {
