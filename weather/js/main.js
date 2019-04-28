@@ -11,32 +11,16 @@ const getWeather = () => {
   req.send();
   
   allDataWeather = JSON.parse(req.response);
-  console.log(allDataWeather);
   
 };
 
 const showResults = () => {
 
-  const location = document.querySelector('.location');
-  location.textContent = allDataWeather.location.country + ' / ' + allDataWeather.location.name;
+  const main = document.querySelector('main');
 
-  const conditionImg = document.querySelector('.condition__img');
-  conditionImg.src = 'http:' + allDataWeather.current.condition.icon;
+  createElemForResults();
 
-  const conditionText = document.querySelector('.condition__text');
-  conditionText.textContent = allDataWeather.current.condition.text;
-
-  const weatherDataWind = document.querySelector('.weather-data__wind');
-  weatherDataWind.textContent = 'Wind: ' + allDataWeather.current.wind_kph + ' km/h';
-
-  const weatherDataPrecipitation = document.querySelector('.weather-data__precipitation');
-  weatherDataPrecipitation.textContent = 'Precipitation: ' + allDataWeather.current.precip_mm + ' mm';
-
-  const weatherDataPressure = document.querySelector('.weather-data__pressure');
-  weatherDataPressure.textContent = 'Pressure: ' + allDataWeather.current.pressure_mb + ' mb';
-
-  const weatherDataTemperature = document.querySelector('.weather-data__temperature');
-  weatherDataTemperature.textContent = 'Temperature: ' + allDataWeather.current.temp_c + ' °c';
+  main.appendChild(createElemForResults());
 
 };
 
@@ -98,7 +82,6 @@ choiceCityForm.addEventListener('submit', e => {
   
   getWeather();
   showResults();
-  
   
 });
 
