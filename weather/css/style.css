@@ -17,17 +17,17 @@ body {
   align-items: center;
   position: absolute;
   top: 29%;
-  left: 20%;
+  left: 23%;
   color: #304246;
   font-size: 30px;
 }
 
 .choice-city-form__button {
-  width: 140px;
+  width: 150px;
   height: 40px;
   border-radius: 7px;
   font-size: 18px;
-  background-color: #ff9b7f;
+  background-color: #f3bfb1;
   color: #304246;
 }
 
@@ -39,9 +39,9 @@ body {
 .results__container {
   width: 560px;
   height: 340px;
-  background-color: #73daf1;
+  background-color: #73daf1d4;
   position: absolute;
-  left: 57%;
+  left: 52%;
   top: 23%;
   display: flex;
   flex-direction: column;
@@ -58,6 +58,7 @@ body {
   border-radius: 7px;
   background-color: #b5f2ff;
   font-size: 20px;
+  color: #304246;
 }
 
 .condition {
