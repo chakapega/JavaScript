@@ -7,11 +7,19 @@ let allDataWeather;
 const getWeather = () => {
 
   const req = new XMLHttpRequest();
-  req.open('GET', `${URL}` + city, false);
+
+  req.open('GET', `${URL}` + city);
+  req.onreadystatechange = () => {
+    if(req.readyState === 4 && req.status === 200) {
+      allDataWeather = JSON.parse(req.response);
+
+      deletionResultsContainer();
+      showResults();
+    };
+  };
+
   req.send();
-  
-  allDataWeather = JSON.parse(req.response);
-  
+
 };
 
 const showResults = () => {
@@ -80,7 +88,7 @@ const deletionResultsContainer = () => {
     document.querySelector('.results__container').remove();
   } catch {
 
-  }
+  };
 
 };
 
@@ -91,8 +99,7 @@ choiceCityForm.addEventListener('submit', e => {
   city = e.target['choice-city-form__input'].value;
   
   getWeather();
-  deletionResultsContainer();
-  showResults();
+
   
 });
 
